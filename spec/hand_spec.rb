@@ -10,5 +10,9 @@ describe CardProblem::Hand do
     it 'returns 1' do
       expect(CardProblem::Hand.new(%w[2C 2H 5C 7C 9C]).rank).to eq 1
     end
+
+    it 'returns 2' do
+      expect(CardProblem::Hand.new(%w[2C 2H 5C 5C 9C]).rank).to eq 2
+    end
   end
 end

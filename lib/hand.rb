@@ -5,7 +5,9 @@ module CardProblem
     end
 
     def rank
-      if pair?
+      if two_pair?
+        2
+      elsif pair?
         1
       else
         0
@@ -23,7 +25,7 @@ module CardProblem
     end
 
     def two_pair?
-      false
+      @cards.group_by { |c| c[:value] }.values.filter { |e| e.size == 2 }.count == 2
     end
   end
 end
