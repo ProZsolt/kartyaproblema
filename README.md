@@ -1,13 +1,15 @@
 # CardProblem
 
-I managed to finish the rank calculation. It will return a number, highest means better rank
 
-I created a dump compare algorithm which only compares ranks. It will return equal even if somebody has a pair of two and the other a pair of four. I have the algorithm in my head but run out of time to program it for every rank. 
+Created a Hand class
+It can be initialised with an array of strings. The array shoud couitains 5 strings. The string should be in the following format: [23456789TJQKA][CDHS]. The string represents a card
+You can get the rank of the hand with the #rank method it will return the name of the rank
+You can compare two hands with the spaceship operator(<=>)
 
-If I had more time, I would create separate classes for card end ranks to separate out some functionality and store human-readable names
+I realized my Ruby is a little bit rusty I mainly played with Go in the previous 1-2 months. Creating the boilerplate took a littlebit more time than expected. 
 
-I realized my Ruby is a little bit rusty I mainly played with Go in the previous 1-2 months. Creating the boilerplate took a quite some time. 
+With more time I would add a lot more test cases, maybe a test case generator. Rake task for testing and a git precommit hook.
 
- If you send this to somebody else it would be nice to send testing data so the person doesn't have to come up with something on the spot.
+If you send this to somebody else it would be nice to send testing data so the person doesn't have to come up with something on the spot.
 
 All in all, I really enjoyed this challenge.
