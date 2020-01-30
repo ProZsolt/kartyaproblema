@@ -13,6 +13,8 @@ Metrics/CyclomaticComplexity:
   Max: 10
 Metrics/PerceivedComplexity:
   Max: 10
+Metrics/AbcSize:
+  Max: 35
 Style/Documentation:
   Enabled: false
 Style/MissingRespondToMissing:
