@@ -40,7 +40,7 @@ module CardProblem
       elsif pair?
         [1]
       else
-        [0]
+        [0] + @cards.map(&:value).sort.reverse
       end
     end
 
