@@ -15,6 +15,9 @@ module CardProblem
     }.freeze
 
     def initialize(cards)
+      raise ArgumentError, 'Argument is not an array' unless cards.is_a?(Array)
+      raise ArgumentError, 'Array size is not 5' unless cards.size == 5
+
       @cards = cards.map { |c| Card.new(c) }
     end
 
@@ -49,9 +52,9 @@ module CardProblem
         return 1 if e[0] > e[1]
         return -1 if e[0] < e[1]
       end
-      return 0
+      0
     end
-    
+
     private
 
     def value_of_high_card

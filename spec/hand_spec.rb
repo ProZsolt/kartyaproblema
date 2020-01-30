@@ -79,7 +79,6 @@ describe CardProblem::Hand do # rubocop:disable Metrics/BlockLength
   end
 
   describe '#<=>' do
-  CardProblem::Hand.new(%w[2C 2H 5C 5C 9C])
     it 'returns -1' do
       three_of_a_kind = CardProblem::Hand.new(%w[2C 2H 2D 5C 9C])
       flush = CardProblem::Hand.new(%w[6C 8C KC TC JC])
