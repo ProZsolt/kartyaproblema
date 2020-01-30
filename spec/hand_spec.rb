@@ -79,11 +79,26 @@ describe CardProblem::Hand do # rubocop:disable Metrics/BlockLength
   end
 
   describe '#<=>' do
-    it 'returns true' do
+  CardProblem::Hand.new(%w[2C 2H 5C 5C 9C])
+    it 'returns -1' do
       three_of_a_kind = CardProblem::Hand.new(%w[2C 2H 2D 5C 9C])
       flush = CardProblem::Hand.new(%w[6C 8C KC TC JC])
 
       expect(three_of_a_kind <=> flush).to eq(-1)
+    end
+
+    it 'returns 1' do
+      two_pair1 = CardProblem::Hand.new(%w[3C 3H 5D 5C 7H])
+      two_pair2 = CardProblem::Hand.new(%w[2C 2H 5H 5S 9C])
+
+      expect(two_pair1 <=> two_pair2).to eq(1)
+    end
+
+    it 'returns 0' do
+      pair1 = CardProblem::Hand.new(%w[2C 2H 3D 5C 9C])
+      pair2 = CardProblem::Hand.new(%w[2D 2S 3C 5S 9S])
+
+      expect(pair1 <=> pair2).to eq(0)
     end
   end
 end

@@ -45,9 +45,13 @@ module CardProblem
     end
 
     def <=>(other)
-      value.first <=> other.value.first
+      value.zip(other.value).each do |e|
+        return 1 if e[0] > e[1]
+        return -1 if e[0] < e[1]
+      end
+      return 0
     end
-
+    
     private
 
     def value_of_high_card
